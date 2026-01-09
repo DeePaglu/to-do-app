@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasky McTaskface - Your Ultimate Todo App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="components/navbar.js"></script>
+    <script src="components/todo-item.js"></script>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <custom-navbar></custom-navbar>
+
+    <main class="container mx-auto px-4 py-8 max-w-3xl">
+        <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+            <h1 class="text-3xl font-bold text-gray-800 mb-6">Your Tasks</h1>
+            
+            <div class="flex mb-6">
+                <input 
+                    type="text" 
+                    id="newTaskInput" 
+                    placeholder="What needs to be done?" 
+                    class="flex-grow px-4 py-2 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                >
+                <button 
+                    id="addTaskBtn"
+                    class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-r-lg transition duration-200"
+                >
+                    Add Task
+                </button>
+            </div>
+
+            <div class="flex justify-between mb-4">
+                <div class="flex space-x-2">
+                    <button id="filterAll" class="filter-btn active px-3 py-1 rounded bg-blue-100 text-blue-600">All</button>
+                    <button id="filterActive" class="filter-btn px-3 py-1 rounded hover:bg-gray-100">Active</button>
+                    <button id="filterCompleted" class="filter-btn px-3 py-1 rounded hover:bg-gray-100">Completed</button>
+                </div>
+                <button id="clearCompleted" class="text-gray-500 hover:text-gray-700 text-sm">Clear completed</button>
+            </div>
+
+            <div id="tasksContainer" class="space-y-3">
+                <!-- Todo items will be added here -->
+            </div>
+
+            <div id="emptyState" class="text-center py-12">
+                <i data-feather="check-circle" class="w-12 h-12 mx-auto text-gray-300 mb-4"></i>
+                <h3 class="text-xl font-medium text-gray-500 mb-2">No tasks yet</h3>
+                <p class="text-gray-400">Add a task to get started!</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>

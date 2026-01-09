@@ -1,0 +1,30 @@
+.filter-btn {
+    transition: all 0.2s ease;
+}
+
+.filter-btn.active {
+    font-weight: 500;
+}
+
+.todo-item {
+    transition: all 0.2s ease;
+}
+
+.todo-item.completed {
+    opacity: 0.7;
+}
+
+.todo-item.completed .todo-text {
+    text-decoration: line-through;
+    color: #9CA3AF;
+}
+
+/* Animation for new tasks */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.todo-item {
+    animation: fadeIn 0.3s ease-out;
+}
